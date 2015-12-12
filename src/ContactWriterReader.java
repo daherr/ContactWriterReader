@@ -46,8 +46,10 @@ public class ContactWriterReader {
 				System.out.print("Enter the last name: ");
 				input = keyboard.nextLine(); // changes value of input
 				testContact.setLastName(input); // sends input to setLastName method to be validated
+			
 				
-				StoreArray = Contact.getLastName();
+				
+				StoreArray = Contact.setLastName();
 						
 				System.out.println("Last name: " + testContact.getLastName()); // displays users input
 
@@ -163,8 +165,6 @@ public class ContactWriterReader {
 		 * @param n
 		 */
 		public void setLastName(String n) {
-			// fix line 35 so it accepts special characters found in last names
-			// ex. ' - spaces
 			if (!n.matches("^[A-Za-z' -]+$")) { // this line is called a regular expression a.k.a. reg expression + means accept any
 												// number of letters / characters
 				System.out.println("Invalid characters in last name");
