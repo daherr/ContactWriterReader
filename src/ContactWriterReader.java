@@ -36,86 +36,93 @@ public class ContactWriterReader {
 				
 		System.out.println( "Welcome to the new and improved contact class!!! " );
 		
-		while( !myFile.exists() ){
-			myFile = new File( inputString );
-			StoreArray = new ContactWriterReader [inputInt];
+		for( c = -1; c < inputInt; c++  ){
 			
-			System.out.print("Enter the last name: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setLastName(input); // sends input to setLastName method to be validated
-			
-			StoreArray = Contact.getLastName();
-					
-			System.out.println("Last name: " + testContact.getLastName()); // displays users input
+			do{
+				myFile = new File( inputString );
+				StoreArray = new Contact [inputInt];
+				
+				
+				System.out.print("Enter the last name: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setLastName(input); // sends input to setLastName method to be validated
+				
+				StoreArray = Contact.getLastName();
+						
+				System.out.println("Last name: " + testContact.getLastName()); // displays users input
 
-			System.out.print("Enter the first name: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setFirstName(input); // sends input to setFirstName method to be validated
+				System.out.print("Enter the first name: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setFirstName(input); // sends input to setFirstName method to be validated
 
-			System.out.println("First name: " + testContact.getFirstName()); // displays users input
+				System.out.println("First name: " + testContact.getFirstName()); // displays users input
 
-			System.out.print("Enter the Middle name: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setMiddleName(input); // sends input to setMiddleName method
-												// to be validated
+				System.out.print("Enter the Middle name: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setMiddleName(input); // sends input to setMiddleName method
+													// to be validated
 
-			System.out.println("Middle name: " + testContact.getMiddleName()); // displays users input
+				System.out.println("Middle name: " + testContact.getMiddleName()); // displays users input
 
-			System.out.print("Enter the prefix (if you have none, input none): ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setPrefix(input); // sends input to setPrefix method to be validated
+				System.out.print("Enter the prefix (if you have none, input none): ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setPrefix(input); // sends input to setPrefix method to be validated
 
-			System.out.println("Prefix: " + testContact.getPrefix()); // displays users input
+				System.out.println("Prefix: " + testContact.getPrefix()); // displays users input
 
-			System.out.print("Enter the phone number: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setPhoneNum(input); // sends input to setPhoneNum method to be validated
+				System.out.print("Enter the phone number: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setPhoneNum(input); // sends input to setPhoneNum method to be validated
 
-			System.out.println("Phone number: " + testContact.getPhoneNum()); // displays users input
+				System.out.println("Phone number: " + testContact.getPhoneNum()); // displays users input
 
-			System.out.print("Enter the Email: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setEmail(input); // sends input to setEmail method to be validated
+				System.out.print("Enter the Email: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setEmail(input); // sends input to setEmail method to be validated
 
-			System.out.println("Email: " + testContact.getEmail()); // displays users input
+				System.out.println("Email: " + testContact.getEmail()); // displays users input
 
-			System.out.print("Enter the Street: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setStreet(input); // sends input to setStreet method to be validated
+				System.out.print("Enter the Street: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setStreet(input); // sends input to setStreet method to be validated
 
-			System.out.println("Street: " + testContact.getEmail()); // displays users input
+				System.out.println("Street: " + testContact.getEmail()); // displays users input
 
-			System.out.print("Enter the City: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setCity(input); // sends input to setCity method to be validated
+				System.out.print("Enter the City: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setCity(input); // sends input to setCity method to be validated
 
-			System.out.println("City: " + testContact.getCity()); // displays users input
+				System.out.println("City: " + testContact.getCity()); // displays users input
 
-			System.out.print("Enter the State: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setState(input); // sends input to setState method to be validated
+				System.out.print("Enter the State: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setState(input); // sends input to setState method to be validated
 
-			System.out.println("State: " + testContact.getState()); // displays users input
+				System.out.println("State: " + testContact.getState()); // displays users input
 
-			System.out.print("Enter the Zip Code: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setZipCode(input); // sends input to setZipCode method to be
-											// validated
+				System.out.print("Enter the Zip Code: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setZipCode(input); // sends input to setZipCode method to be
+												// validated
 
-			System.out.println("Zip code: " + testContact.getZipCode()); // displays users input
+				System.out.println("Zip code: " + testContact.getZipCode()); // displays users input
 
-			System.out.print("Enter the Occupation: ");
-			input = keyboard.nextLine(); // changes value of input
-			testContact.setOcupation(input); // sends input to setOccupation method to be validated
+				System.out.print("Enter the Occupation: ");
+				input = keyboard.nextLine(); // changes value of input
+				testContact.setOcupation(input); // sends input to setOccupation method to be validated
 
-			System.out.println("Occupation: " + testContact.getOccupation()); // displays users input
+				System.out.println("Occupation: " + testContact.getOccupation()); // displays users input
+			}while( !myFile.exists() );
+		} 
+	
 			
 			System.exit(0);
 
-		}
 		
-		inputFile[i] = new contact();
+		
 		inputFile = new BufferedReader( new FileReader( myFile ));
+		//inputFile[c] = new BufferedReader( new FileReader( myFile ));
+		
 		
 		
 		inputFile.mark(256);
