@@ -150,7 +150,20 @@ public class ContactWriterReader {
 		
 		while(  inputFile.ready() ){
 			inputString = inputFile.readLine(); // allows the file to be read
-			System.out.println( "line [" + c++ +"] = " + inputString ); // prints the lines of the file
+			
+			System.out.println( storeArray[c].getLastName()); // writes last name to the file
+			System.out.println( storeArray[c].getFirstName()); // writes the first name to the file
+			System.out.println( storeArray[c].getMiddleName());// writes the middle name to the file
+			System.out.println( storeArray[c].getPrefix());// writes the prefix to the file
+			System.out.println( storeArray[c].getPhoneNum());// writes the phone number to the file
+			System.out.println( storeArray[c].getEmail()); // writes the email to the file
+			System.out.println( storeArray[c].getStreet());// writes the street to the file
+			System.out.println( storeArray[c].getCity());// writes the city to the file
+			System.out.println( storeArray[c].getState());// writes the state to the file
+			System.out.println( storeArray[c].getZipCode());// writes the zip code to the file
+			System.out.println( storeArray[c].getOccupation());// writes the occupation to the file
+			
+			//System.out.println( "line [" + c++ +"] = " + inputString ); // prints the lines of the file
 		}
 	
 			inputFile.close();
