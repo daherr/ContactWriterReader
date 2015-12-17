@@ -23,7 +23,6 @@ public class ContactWriterReader {
 		// TODO Auto-generated method stub
 
 	
-		Contact testContact = new Contact(); // creates the a new variable of type contact
 		String input = null; // variable for users input
 		Scanner keyboard = new Scanner(System.in); // creates Scanner Object
 		File myFile = new File( "myOutputFile.txt" ); // creates a new file
@@ -46,21 +45,17 @@ public class ContactWriterReader {
 				
 				System.out.print("Enter the last name: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setLastName(input); // sends input to setLastName method to be validated
 			
 				storeArray[inputInt].setLastName(input);// adds the last name to the array						
 
 				System.out.print("Enter the first name: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setFirstName(input); // sends input to setFirstName method to be validated
-
+				
 				storeArray[inputInt].setFirstName(input);// adds the first name to the array
 
 				System.out.print("Enter the Middle name: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setMiddleName(input); // sends input to setMiddleName method
-													// to be validated
-
+				
 				storeArray[inputInt].setMiddleName(input); // adds the middle name to the array
 
 				System.out.print("Enter the prefix (if you have none, input none): ");
@@ -71,44 +66,36 @@ public class ContactWriterReader {
 
 				System.out.print("Enter the phone number: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setPhoneNum(input); // sends input to setPhoneNum method to be validated
 
 				storeArray[inputInt].setPhoneNum(input); // adds the phone number to the array
 
 				System.out.print("Enter the Email: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setEmail(input); // sends input to setEmail method to be validated
 
 				storeArray[inputInt].setEmail(input); // adds the email to the array
 				
 				System.out.print("Enter the Street: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setStreet(input); // sends input to setStreet method to be validated
-
+				
 				storeArray[inputInt].setStreet(input); // adds the street to the array
 				
 				System.out.print("Enter the City: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setCity(input); // sends input to setCity method to be validated
 
 				storeArray[inputInt].setCity(input); // adds the city to the array
 
 				System.out.print("Enter the State: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setState(input); // sends input to setState method to be validated
 
 				storeArray[inputInt].setState(input); // adds the state to the array
 
 				System.out.print("Enter the Zip Code: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setZipCode(input); // sends input to setZipCode method to be
-												// validated
 
 				storeArray[inputInt].setZipCode(input); // adds the zip code to the array
 
 				System.out.print("Enter the Occupation: ");
 				input = keyboard.nextLine(); // changes value of input
-				storeArray[inputInt].setOcupation(input); // sends input to setOccupation method to be validated
 
 				storeArray[inputInt].setOcupation(input); // adds the occupation to the array
 				
@@ -140,30 +127,34 @@ public class ContactWriterReader {
 		}else{
 			
 			inputFile = new BufferedReader( new FileReader( myFile )); // creates a new buffered reader 
-		while(  i < c ){
+			storeArray = new Contact[ inputInt ];// Initializes the store array
+			while(  i < c ){
 			
 			inputFile.ready(); // tells whether the file is able to be read
 			
-			storeArray = new Contact[ inputInt ]; // Initializes the store array
-			i++;
+			 i++;
 		}
 		
-		while(  inputFile.ready() ){
+		for( c = 0; c < inputInt; c++ ){
+			
 			inputString = inputFile.readLine(); // allows the file to be read
+			 
+		}
+		while(  inputFile.ready() ){
+			c = 0;
+			System.out.println( storeArray[c].getLastName()); // prints last name 
+			System.out.println( storeArray[c].getFirstName()); // prints first name 
+			System.out.println( storeArray[c].getMiddleName());// prints middle name
+			System.out.println( storeArray[c].getPrefix());// prints prefix
+			System.out.println( storeArray[c].getPhoneNum());// prints phone number
+			System.out.println( storeArray[c].getEmail()); // prints email
+			System.out.println( storeArray[c].getStreet());// prints street 
+			System.out.println( storeArray[c].getCity());// prints city 
+			System.out.println( storeArray[c].getState());// prints state 
+			System.out.println( storeArray[c].getZipCode());// prints zip code 
+			System.out.println( storeArray[c].getOccupation());// prints occupation
+			c++;
 			
-			System.out.println( storeArray[c].getLastName()); // writes last name to the file
-			System.out.println( storeArray[c].getFirstName()); // writes the first name to the file
-			System.out.println( storeArray[c].getMiddleName());// writes the middle name to the file
-			System.out.println( storeArray[c].getPrefix());// writes the prefix to the file
-			System.out.println( storeArray[c].getPhoneNum());// writes the phone number to the file
-			System.out.println( storeArray[c].getEmail()); // writes the email to the file
-			System.out.println( storeArray[c].getStreet());// writes the street to the file
-			System.out.println( storeArray[c].getCity());// writes the city to the file
-			System.out.println( storeArray[c].getState());// writes the state to the file
-			System.out.println( storeArray[c].getZipCode());// writes the zip code to the file
-			System.out.println( storeArray[c].getOccupation());// writes the occupation to the file
-			
-			//System.out.println( "line [" + c++ +"] = " + inputString ); // prints the lines of the file
 		}
 	
 			inputFile.close();
@@ -176,7 +167,7 @@ public class ContactWriterReader {
 
 	public static class Contact {
 		
-		private String lName, fName, mName; // variables for last, first, and middle name
+		String lName, fName, mName; // variables for last, first, and middle name
 		String prefix; // variable for prefix
 		String phoneNum; // variable for phone number
 		String email; // variable for email
