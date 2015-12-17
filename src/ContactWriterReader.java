@@ -41,7 +41,7 @@ public class ContactWriterReader {
 			
 			do{
 				
-				storeArray [inputInt]= new Contact() ;// creates new object for the array
+				storeArray [inputInt] = new Contact() ;// creates new object for the array
 				
 				System.out.print("Enter the last name: ");
 				input = keyboard.nextLine(); // changes value of input
@@ -127,43 +127,68 @@ public class ContactWriterReader {
 		}else{
 			
 			inputFile = new BufferedReader( new FileReader( myFile )); // creates a new buffered reader 
-			storeArray = new Contact[ inputInt ];// Initializes the store array
-			while(  i < c ){
+			while(  inputFile.ready() ){ // .ready tells whether the file is able to be ready
+				// Takes each line of text from the text file and stores it in contact objects, which get stored in the array storeArray
+				
+				storeArray[inputInt] = new Contact() ;// creates new object for the array
 			
-			inputFile.ready(); // tells whether the file is able to be read
+				input = inputFile.readLine();
+				storeArray[inputInt].setLastName(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setFirstName(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setMiddleName(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setPrefix(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setPhoneNum(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setEmail(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setStreet(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setCity(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setState(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setZipCode(input);
+				
+				input = inputFile.readLine();
+				storeArray[inputInt].setOcupation(input);
+				
+				inputInt++;
+			}
 			
-			 i++;
-		}
-		
-		for( c = 0; c < inputInt; c++ ){
-			
-			inputString = inputFile.readLine(); // allows the file to be read
-			 
-		}
-		while(  inputFile.ready() ){
-			c = 0;
-			System.out.println( storeArray[c].getLastName()); // prints last name 
-			System.out.println( storeArray[c].getFirstName()); // prints first name 
-			System.out.println( storeArray[c].getMiddleName());// prints middle name
-			System.out.println( storeArray[c].getPrefix());// prints prefix
-			System.out.println( storeArray[c].getPhoneNum());// prints phone number
-			System.out.println( storeArray[c].getEmail()); // prints email
-			System.out.println( storeArray[c].getStreet());// prints street 
-			System.out.println( storeArray[c].getCity());// prints city 
-			System.out.println( storeArray[c].getState());// prints state 
-			System.out.println( storeArray[c].getZipCode());// prints zip code 
-			System.out.println( storeArray[c].getOccupation());// prints occupation
-			c++;
-			
-		}
-	
 			inputFile.close();
+			
+			for( c = 0; c < inputInt; c++ ){
+			
+				System.out.println( storeArray[c].getLastName()); // prints last name 
+				System.out.println( storeArray[c].getFirstName()); // prints first name 
+				System.out.println( storeArray[c].getMiddleName());// prints middle name
+				System.out.println( storeArray[c].getPrefix());// prints prefix
+				System.out.println( storeArray[c].getPhoneNum());// prints phone number
+				System.out.println( storeArray[c].getEmail()); // prints email
+				System.out.println( storeArray[c].getStreet());// prints street 
+				System.out.println( storeArray[c].getCity());// prints city 
+				System.out.println( storeArray[c].getState());// prints state 
+				System.out.println( storeArray[c].getZipCode());// prints zip code 
+				System.out.println( storeArray[c].getOccupation());// prints occupation
+				
+			}
+		}
+		System.exit(0); // exits the program
 	}
-			System.exit(0); // exits the program
-		
-		
-		
-	}
+			
 
 	public static class Contact {
 		
