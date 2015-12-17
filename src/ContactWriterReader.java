@@ -46,7 +46,7 @@ public class ContactWriterReader {
 					
 					Contact [] storeArrayT = Arrays.copyOf( storeArray, storeArray.length + 5 ); // creates new array 
 					storeArray = storeArrayT; // sets the new array to the old storeArray
-					System.out.println( " Maximun number of Contacts has been, creating new contacts ( five more ) " );
+					System.out.println( " Maximun number of Contacts has been reached, creating new contacts ( five more ) " );
 					
 				}
 				
