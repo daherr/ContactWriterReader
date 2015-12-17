@@ -45,10 +45,11 @@ public class ContactWriterReader {
 				if( storeArray.length == inputInt ){
 					
 					Contact [] storeArrayT = Arrays.copyOf( storeArray, storeArray.length + 5 ); // creates new array 
-					storeArray = storeArrayT; // 
+					storeArray = storeArrayT; // sets the new array to the old storeArray
 					System.out.println( " Maximun number of Contacts has been, creating new contacts ( five more ) " );
 					
 				}
+				
 				storeArray [inputInt] = new Contact() ;// creates new object for the array
 				
 				System.out.print("Enter the last name: ");
@@ -138,6 +139,15 @@ public class ContactWriterReader {
 			while(  inputFile.ready() ){ // .ready tells whether the file is able to be ready
 				// Takes each line of text from the text file and stores it in contact objects, which get stored in the array storeArray
 				
+				
+				if( storeArray.length == inputInt ){
+					
+					Contact [] storeArrayT = Arrays.copyOf( storeArray, storeArray.length + 5 ); // creates new array 
+					storeArray = storeArrayT; // sets the new array to the old storeArray
+					System.out.println( " Maximun number of Contacts has been, creating new contacts ( five more ) " );
+					
+				}
+	
 				storeArray[inputInt] = new Contact() ;// creates new object for the array
 			
 				input = inputFile.readLine(); // reads the last name from the text file
