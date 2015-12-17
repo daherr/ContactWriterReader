@@ -1,4 +1,5 @@
 import java.io.*; // allows for all java.io objects 
+import java.util.Arrays;
 import java.util.Scanner; // allows for the scanner object
 import java.util.stream.Stream; // allows for the java stream object
 
@@ -41,6 +42,13 @@ public class ContactWriterReader {
 			
 			do{
 				
+				if( storeArray.length == inputInt ){
+					
+					Contact [] storeArrayT = Arrays.copyOf( storeArray, storeArray.length + 5 ); // creates new array 
+					storeArray = storeArrayT; // 
+					System.out.println( " Maximun number of Contacts has been, creating new contacts ( five more ) " );
+					
+				}
 				storeArray [inputInt] = new Contact() ;// creates new object for the array
 				
 				System.out.print("Enter the last name: ");
@@ -132,37 +140,37 @@ public class ContactWriterReader {
 				
 				storeArray[inputInt] = new Contact() ;// creates new object for the array
 			
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the last name from the text file
 				storeArray[inputInt].setLastName(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); //  reads the first name from the text file
 				storeArray[inputInt].setFirstName(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the middle name from the text file
 				storeArray[inputInt].setMiddleName(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the prefix from the text file 
 				storeArray[inputInt].setPrefix(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the phone number from the text file
 				storeArray[inputInt].setPhoneNum(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the email from the text file 
 				storeArray[inputInt].setEmail(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the street from the text file 
 				storeArray[inputInt].setStreet(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the city from the text file 
 				storeArray[inputInt].setCity(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the state from the text file
 				storeArray[inputInt].setState(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the zip code from the text file
 				storeArray[inputInt].setZipCode(input);
 				
-				input = inputFile.readLine();
+				input = inputFile.readLine(); // reads the occupation from the text file
 				storeArray[inputInt].setOcupation(input);
 				
 				inputInt++;
@@ -172,17 +180,17 @@ public class ContactWriterReader {
 			
 			for( c = 0; c < inputInt; c++ ){
 			
-				System.out.println( storeArray[c].getLastName()); // prints last name 
-				System.out.println( storeArray[c].getFirstName()); // prints first name 
-				System.out.println( storeArray[c].getMiddleName());// prints middle name
-				System.out.println( storeArray[c].getPrefix());// prints prefix
-				System.out.println( storeArray[c].getPhoneNum());// prints phone number
-				System.out.println( storeArray[c].getEmail()); // prints email
-				System.out.println( storeArray[c].getStreet());// prints street 
-				System.out.println( storeArray[c].getCity());// prints city 
-				System.out.println( storeArray[c].getState());// prints state 
-				System.out.println( storeArray[c].getZipCode());// prints zip code 
-				System.out.println( storeArray[c].getOccupation());// prints occupation
+				System.out.println( "First name: " + storeArray[c].getLastName()); // prints last name 
+				System.out.println( "Last name: " + storeArray[c].getFirstName()); // prints first name 
+				System.out.println( "Middle Name: " + storeArray[c].getMiddleName());// prints middle name
+				System.out.println( "Prefix: " + storeArray[c].getPrefix());// prints prefix
+				System.out.println( "Phone number : " + storeArray[c].getPhoneNum());// prints phone number
+				System.out.println( "Email: " + storeArray[c].getEmail()); // prints email
+				System.out.println( "Street: " + storeArray[c].getStreet());// prints street 
+				System.out.println( "City: " + storeArray[c].getCity());// prints city 
+				System.out.println( "State: " + storeArray[c].getState());// prints state 
+				System.out.println( "Zip code: " + storeArray[c].getZipCode());// prints zip code 
+				System.out.println( "Occupation: " + storeArray[c].getOccupation());// prints occupation
 				
 			}
 		}
